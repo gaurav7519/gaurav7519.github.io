@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <text x="32" y="33"
+    font-family="Arial Black, Arial, Helvetica, sans-serif"
+    font-size="60" font-weight="900"
+    text-anchor="middle" dominant-baseline="central"
+    fill="#ff7a1a" stroke="#151515" stroke-width="4"
+    paint-order="stroke" stroke-linejoin="round">G</text>
+</svg>
