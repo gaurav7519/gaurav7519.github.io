@@ -45,7 +45,6 @@ body {
   top: 0;
   padding: 16px 0;
   background: var(--bg);
-  border-bottom: 1px solid var(--line);
   z-index: 10;
 }
 
@@ -64,11 +63,6 @@ body {
 
 .panel {
   padding: 40px 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.panel:last-child {
-  border-bottom: none;
 }
 
 .hero {
@@ -118,14 +112,14 @@ p {
 
 .btn {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 7px 16px;
   border: 1px solid var(--accent);
   background: var(--accent);
   color: var(--on-accent);
   border-radius: var(--radius);
   font: inherit;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   text-decoration: none;
   cursor: pointer;
 }
@@ -217,24 +211,27 @@ a,
   gap: 10px;
 }
 
+.press {
+  margin: 14px 0 0;
+}
+
 .inline-btn {
-  display: inline-block;
-  padding: 1px 10px;
-  border: 1px solid var(--fg);
-  border-radius: 999px;
-  background: var(--bg);
+  display: inline;
+  padding: 0;
+  border: none;
+  background: none;
   color: var(--fg);
   font: inherit;
-  font-size: 0.85em;
-  line-height: 1.5;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
   cursor: pointer;
   white-space: nowrap;
-  transition: background 0.15s ease, color 0.15s ease;
+  transition: color 0.15s ease;
 }
 
 .inline-btn:hover {
-  background: var(--fg);
-  color: var(--bg);
+  color: var(--accent);
 }
 
 /* resume modal */

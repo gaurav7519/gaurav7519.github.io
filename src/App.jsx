@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import {
   SITE,
-  ABOUT,
   PRESSME,
   PROJECTS,
   SKILLS,
@@ -33,12 +32,24 @@ export default function App() {
     root.setProperty("--accent", accent);
     root.setProperty("--bg", PRESSME.tints[i][0]);
     root.setProperty("--bg-soft", PRESSME.tints[i][1]);
-
-    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><text x="32" y="33" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="60" font-weight="900" text-anchor="middle" dominant-baseline="central" fill="${accent}" stroke="#151515" stroke-width="4" paint-order="stroke" stroke-linejoin="round">G</text></svg>`;
-    document.querySelectorAll("link[rel~='icon'], link[rel='apple-touch-icon']").forEach((link) => {
-      link.setAttribute("href", `data:image/svg+xml,${encodeURIComponent(svg)}`);
-    });
   }, [step]);
+
+  useEffect(() => {
+    const setFavicon = (accent) => {
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><text x="32" y="33" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="60" font-weight="900" text-anchor="middle" dominant-baseline="central" fill="${accent}" stroke="#151515" stroke-width="4" paint-order="stroke" stroke-linejoin="round">G</text></svg>`;
+      document.querySelectorAll("link[rel~='icon'], link[rel='apple-touch-icon']").forEach((link) => {
+        link.setAttribute("href", `data:image/svg+xml,${encodeURIComponent(svg)}`);
+      });
+    };
+
+    let i = 0;
+    setFavicon(PRESSME.accents[i]);
+    const id = setInterval(() => {
+      i = (i + 1) % PRESSME.accents.length;
+      setFavicon(PRESSME.accents[i]);
+    }, 600);
+    return () => clearInterval(id);
+  }, []);
 
   const lineIdx = Math.min(step, PRESSME.lines.length - 1);
 
@@ -56,21 +67,11 @@ export default function App() {
           <h1>{SITE.tagline}</h1>
           <p className="lead">{SITE.summary}</p>
           <div className="actions">
-            <a className="btn" href="#projects">
-              View projects
-            </a>
-            <button className="btn ghost" onClick={() => setResumeOpen(true)}>
+            <button className="btn" onClick={() => setResumeOpen(true)}>
               Resume
             </button>
           </div>
-        </section>
-
-        <section id="about" className="panel">
-          <h2>About</h2>
-          {ABOUT.map((para) => (
-            <p key={para}>{para}</p>
-          ))}
-          <p>
+          <p className="press">
             <button
               className="inline-btn"
               onClick={() => setStep((s) => s + 1)}
@@ -99,7 +100,7 @@ export default function App() {
         </section>
 
         <section id="skills" className="panel">
-          <h2>Skills</h2>
+          <h2>Toolkit</h2>
           <ul className="skills">
             {SKILLS.map((s) => (
               <li key={s}>{s}</li>

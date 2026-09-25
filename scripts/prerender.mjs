@@ -6,14 +6,11 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import {
   SITE,
-  ABOUT,
   PRESSME,
   PROJECTS,
   SKILLS,
   CONTACT_INTRO,
 } from "../src/content.js";
-
-const aboutParas = [...ABOUT, PRESSME.lines[0]];
 
 const dist = resolve(process.cwd(), "dist");
 const esc = (s) =>
@@ -38,10 +35,7 @@ const bodyHtml = `<div id="root"><div class="wrap">
       <p>${esc(SITE.role)}</p>
       <h1>${esc(SITE.tagline)}</h1>
       <p>${esc(SITE.summary)}</p>
-    </section>
-    <section id="about">
-      <h2>About</h2>
-${aboutParas.map((p) => `      <p>${esc(p)}</p>`).join("\n")}
+      <p>${esc(PRESSME.lines[0])}</p>
     </section>
     <section id="projects">
       <h2>Projects</h2>
@@ -50,7 +44,7 @@ ${projectsHtml}
       </ul>
     </section>
     <section id="skills">
-      <h2>Skills</h2>
+      <h2>Toolkit</h2>
       <ul>${SKILLS.map((s) => `<li>${esc(s)}</li>`).join("")}</ul>
     </section>
     <section id="contact">
@@ -110,17 +104,13 @@ const llms = `# ${SITE.name}
 - LinkedIn: ${SITE.linkedin}
 - Resume (PDF): ${SITE.url}${SITE.resume}
 
-## About
-
-${aboutParas.join("\n\n")}
-
 ## Projects
 
 ${PROJECTS.map(
   (p) => `### ${p.title}\n\nStack: ${p.stack}\n\n${p.points.map((x) => `- ${x}`).join("\n")}`
 ).join("\n\n")}
 
-## Skills
+## Toolkit
 
 ${SKILLS.map((s) => `- ${s}`).join("\n")}
 

@@ -5,22 +5,17 @@
 
 export const SITE = {
   name: "Gaurav Mali",
-  role: "AI & Data Software Developer",
+  role: "AI Software Developer",
   url: "https://gaurav7519.github.io/",
   location: "India",
-  tagline: "I build AI systems that reason, act, and automate real work.",
+  tagline: "I build AI systems.",
   summary:
-    "Computer Science engineer based in India, focused on LLM applications, agentic AI workflows, and data pipelines that turn raw data into decisions.",
+    "Computer Science engineer focused on LLM applications and agentic AI workflows.",
   email: "gauravmali345@gmail.com",
   github: "https://github.com/gaurav7519",
   linkedin: "https://www.linkedin.com/in/gauravmali75/",
   resume: "resume.pdf",
 };
-
-export const ABOUT = [
-  "I design and ship intelligent applications that combine large language models, retrieval, and automation. My work spans agentic AI systems, data scraping and processing pipelines, and dashboards that make information usable.",
-  "I like problems where an autonomous agent can replace repetitive manual work — reading context, making a decision, and acting on it. I keep experimenting with new tools to stay current in the AI space.",
-];
 
 // A tiny interaction: the button stays put; each press advances a small,
 // deadpan "agent loop" through the text that follows it.
@@ -28,27 +23,28 @@ export const PRESSME = {
   label: "Press me",
   labelAfter: "Again",
   // Accent cycles through these on each press — no colour repeats
-  // until the whole list has been used. Index 0 is the site default.
+  // until the whole list has been used. Punchy, high-saturation hues,
+  // picked to catch the eye when they change. Index 0 is the site default.
   accents: [
-    "#ff4f00",
-    "#2563eb",
-    "#0d9488",
-    "#7c3aed",
-    "#db2777",
-    "#b45309",
-    "#0891b2",
-    "#dc2626",
+    "#ff1a1a",
+    "#0057ff",
+    "#00b34d",
+    "#8000ff",
+    "#ff0090",
+    "#ff6a00",
+    "#00b8d9",
+    "#e6a700",
   ],
   // Paired faint, near-white page tints [--bg, --bg-soft] for each accent.
   tints: [
-    ["#fffefb", "#f8f4f0"],
-    ["#f7f9ff", "#eef2fd"],
-    ["#f4faf8", "#e9f5f1"],
-    ["#f9f7ff", "#f1ecfd"],
-    ["#fff6fb", "#fbeaf3"],
-    ["#fdf9f3", "#f6efe3"],
-    ["#f3fafc", "#e7f4f8"],
-    ["#fff7f6", "#fceae8"],
+    ["#fff5f5", "#ffe8e8"],
+    ["#f2f6ff", "#e3ecff"],
+    ["#f0fdf6", "#dcfce9"],
+    ["#f8f2ff", "#efe0ff"],
+    ["#fff0f8", "#ffe0f0"],
+    ["#fff6ee", "#ffe9d6"],
+    ["#eefcff", "#d6f6ff"],
+    ["#fffaf0", "#fff2d6"],
   ],
   lines: [
     "You don't really know what a tool does until you press the button.",
@@ -89,8 +85,6 @@ export const SKILLS = [
   "Agentic AI",
   "LLM APIs",
   "FastAPI",
-  "Data Pipelines",
-  "Selenium",
 ];
 
 export const CONTACT_INTRO =
